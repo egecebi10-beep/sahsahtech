@@ -5,6 +5,99 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>SahSah Tech — Driven by Innovation</title>
   <style>
+    /* === Automotive isolated layout === */
+#automotive {
+  padding: 72px 0;
+  scroll-margin-top: 96px;           /* menüye tıklayınca üstten pay */
+  position: relative;
+  z-index: 1;
+}
+
+.auto-wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,215,0,0.18);
+  box-shadow: 0 10px 40px rgba(0,0,0,.35);
+  backdrop-filter: blur(6px);
+}
+
+.auto-head {
+  margin-bottom: 20px;
+}
+
+.auto-head h2 {
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.15;
+  margin: 0 0 6px;
+}
+
+.auto-head p {
+  color: #c9c9d4;
+  margin: 0;
+}
+
+/* responsive grid sadece bu bölüm için */
+.auto-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .auto-grid {
+    grid-template-columns: 1.2fr 1fr;  /* metin | görseller */
+    align-items: start;
+  }
+}
+
+/* sol metin sütunu */
+.auto-copy {
+  display: grid;
+  gap: 12px;
+}
+.auto-copy .tag {
+  font-size: 12px;
+  letter-spacing: .18em;
+  color: #d4af37;
+  text-transform: uppercase;
+}
+
+/* sağ görsel şerit */
+.auto-strip {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .auto-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.auto-card {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.02);
+}
+
+.auto-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;                /* sabit oran, yamulmayı önler */
+  object-fit: cover;
+}
+
+.auto-cap {
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #cfcfe0;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
     html,body{height:100%;margin:0;font:16px/1.6 system-ui,Segoe UI,Inter,Arial}
     body{display:grid;place-items:center;background:#0e0b14;color:#eee}
     .card{max-width:720px;padding:32px;border-radius:20px;background:#ffffff10;border:1px solid #ffffff22}
@@ -145,6 +238,51 @@
         <img alt="5G boards mock" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1400&auto=format&fit=crop" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:var(--radius)"/>
       </div>
     </section>
+<section id="automotive">
+  <div class="auto-wrap">
+    <div class="auto-head">
+      <div class="tag">Automotive</div>
+      <h2 class="gold">5G-powered Automotive & Telemetry</h2>
+      <p>Milisaniye gecikmeli telemetri, canlı performans analitiği, uzaktan teşhis/OTA ve güvenli araç-edge bağlantısı.</p>
+    </div>
+
+    <div class="auto-grid">
+      <!-- Sol sütun: kısa madde listesi -->
+      <div class="auto-copy">
+        <div>
+          <strong>Gerçek zamanlı veri:</strong> CAN/OBD-II → 5G edge gateway → dashboard.
+        </div>
+        <div>
+          <strong>OTA & uzaktan teşhis:</strong> bakımı planla, arızayı sahaya gitmeden gör.
+        </div>
+        <div>
+          <strong>Gecikme:</strong> ms seviyesinde komut & telemetri (özel APN/VPN).
+        </div>
+        <div>
+          <strong>Entegrasyon:</strong> mevcut bulut ve veri gölüne kolay köprü.
+        </div>
+      </div>
+
+      <!-- Sağ sütun: 3 görsel şerit -->
+      <div class="auto-strip">
+        <figure class="auto-card">
+          <img class="auto-img" src="images/rr-range.jpg" alt="Range Rover & Rolls-Royce – New York" loading="lazy" />
+          <figcaption class="auto-cap">Range Rover & Rolls-Royce — NYC</figcaption>
+        </figure>
+
+        <figure class="auto-card">
+          <img class="auto-img" src="images/ferrari-f8.jpg" alt="Ferrari F8 – Sunset" loading="lazy" />
+          <figcaption class="auto-cap">Ferrari F8 — Sunset</figcaption>
+        </figure>
+
+        <figure class="auto-card">
+          <img class="auto-img" src="images/ferrari-812.jpg" alt="Ferrari 812 — Track" loading="lazy" />
+          <figcaption class="auto-cap">Ferrari 812 — Track</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- FEATURES -->
     <section class="grid features">
