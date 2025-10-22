@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SahSah Tech — Driven by Innovation</title>
+  <meta name="description" content="SahSah Tech: 5G hardware, automation and AI solutions. Driven by Innovation." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/favicon-512.png"/>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <!-- Basit altın at simgesi (SVG) -->
+      <svg viewBox="0 0 64 64" class="logo"><path fill="currentColor" d="M11 44c2-7 6-11 13-13l5-9 7 3-3 7 8 2c4 1 7 4 8 8 0 2-1 3-3 4l-8 2H21c-4 0-8-1-10-4z"/></svg>
+      <span>SahSah <b>Tech</b></span>
+    </div>
+    <div class="lang">
+      <button id="btn-en" class="chip active">EN</button>
+      <button id="btn-tr" class="chip">TR</button>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="glass">
+      <h1 data-i18n="h1">Driven by Innovation</h1>
+      <p class="lead" data-i18n="lead">
+        Advancing industries with cutting-edge 5G hardware, automation and AI solutions.
+      </p>
+      <div class="cta">
+        <a class="btn" href="mailto:contact@sahsahtech.com" data-i18n="cta">Contact Us</a>
+        <a class="btn ghost" href="#solutions" data-i18n="cta2">Our Solutions</a>
+      </div>
+    </div>
+  </main>
+
+  <section id="solutions" class="section">
+    <h2 data-i18n="s1">Core Capabilities</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>5G Hardware</h3>
+        <p data-i18n="c1">Carrier-grade radio modules, gateways and private 5G kits.</p>
+      </article>
+      <article class="card">
+        <h3>Automation</h3>
+        <p data-i18n="c2">Industrial IoT, PLC integration and robotics orchestration.</p>
+      </article>
+      <article class="card">
+        <h3>AI Integration</h3>
+        <p data-i18n="c3">Edge inference, predictive maintenance and digital twins.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <h2 data-i18n="s2">Why SahSah Tech?</h2>
+    <ul class="bullets">
+      <li data-i18n="b1">Royal-grade design, enterprise-grade reliability.</li>
+      <li data-i18n="b2">Secure supply & import ops for 5G technologies.</li>
+      <li data-i18n="b3">From Istanbul to the world — global delivery.</li>
+    </ul>
+  </section>
+
+  <footer class="footer">
+    <p><strong>SahSah Tech</strong> · Istanbul, Türkiye ·
+      <a href="mailto:contact@sahsahtech.com">contact@sahsahtech.com</a> · sahsahtech.com
+    </p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
+:root{
+  --bg:#0e0b14;           /* koyu morimsi siyah */
+  --royal:#2E004F;        /* derin mor */
+  --gold:#E0B341;         /* altın */
+  --text:#e9e6f2;
+  --muted:#ab9ec0;
+  --glass:rgba(255,255,255,.08);
+  --border:rgba(255,255,255,.12);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color:var(--text); background: radial-gradient(1000px 600px at 20% -10%, #3b145f33, transparent),
+                      radial-gradient(800px 600px at 90% 10%, #6a34b233, transparent),
+                      var(--bg);
+}
+
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 24px; position:sticky; top:0; backdrop-filter:saturate(140%) blur(18px);
+  background:linear-gradient(to bottom, #0e0b14cc, #0e0b1400); border-bottom:1px solid var(--border); z-index:10;
+}
+.brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.3px}
+.brand .logo{width:28px; height:28px; color:var(--gold)}
+.lang .chip{background:#ffffff10; border:1px solid var(--border); color:var(--text); padding:6px 10px; border-radius:999px; cursor:pointer}
+.lang .chip.active{border-color:var(--gold); color:var(--gold)}
+
+.hero{min-height:68vh; display:grid; place-items:center; padding:56px 20px;}
+.glass{
+  max-width:980px; width:100%; padding:40px; text-align:center;
+  background:linear-gradient(135deg,#ffffff14,#ffffff06); border:1px solid var(--border);
+  border-radius:28px; backdrop-filter:blur(22px) saturate(140%); box-shadow:0 20px 60px #00000066;
+}
+h1{font-size:min(10vw,64px); margin:0 0 12px; color:#f2ecff}
+.lead{color:var(--muted); font-size:18px; margin:0 auto 22px; max-width:760px}
+.cta{display:flex; gap:12px; justify-content:center}
+.btn{background:var(--gold); color:#1a1022; border-radius:12px; padding:12px 18px; text-decoration:none; font-weight:700}
+.btn.ghost{background:transparent; border:1px solid var(--border); color:var(--text)}
+.section{padding:64px 20px; max-width:1100px; margin:0 auto}
+.section.alt{background:linear-gradient(180deg,#180d25,#120a1b)}
+h2{font-size:28px; margin:0 0 18px}
+.grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:#ffffff06; border:1px solid var(--border); border-radius:16px; padding:18px}
+.card h3{color:var(--gold); margin:0 0 6px}
+
+.bullets{line-height:1.8; margin:0; padding-left:18px}
+.footer{border-top:1px solid var(--border); color:#cbbfdd; text-align:center; padding:24px 16px}
+a{color:var(--gold)}
+const tr = {
+  h1: "İnovasyonla Güçleniyoruz",
+  lead: "5G donanım, otomasyon ve yapay zekâ çözümleriyle endüstrileri ileri taşıyoruz.",
+  cta: "Bize Ulaşın",
+  cta2: "Çözümlerimiz",
+  s1: "Temel Yetenekler",
+  c1: "Operatör seviyesinde radyo modülleri, ağ geçitleri ve private 5G kitleri.",
+  c2: "Endüstriyel IoT, PLC entegrasyonu ve robotik orkestrasyon.",
+  c3: "Edge çıkarım, kestirimci bakım ve dijital ikizler.",
+  s2: "Neden SahSah Tech?",
+  b1: "Kraliyet düzeyinde tasarım, kurumsal düzeyde güvenilirlik.",
+  b2: "5G teknolojilerinde güvenli tedarik ve ithalat operasyonları.",
+  b3: "İstanbul’dan dünyaya — küresel teslimat."
+};
+const en = {
+  h1: "Driven by Innovation",
+  lead: "Advancing industries with cutting-edge 5G hardware, automation and AI solutions.",
+  cta: "Contact Us",
+  cta2: "Our Solutions",
+  s1: "Core Capabilities",
+  c1: "Carrier-grade radio modules, gateways and private 5G kits.",
+  c2: "Industrial IoT, PLC integration and robotics orchestration.",
+  c3: "Edge inference, predictive maintenance and digital twins.",
+  s2: "Why SahSah Tech?",
+  b1: "Royal-grade design, enterprise-grade reliability.",
+  b2: "Secure supply & import ops for 5G technologies.",
+  b3: "From Istanbul to the world — global delivery."
+};
+const apply = dict => document.querySelectorAll("[data-i18n]").forEach(el=>{
+  const key = el.getAttribute("data-i18n"); if(dict[key]) el.textContent = dict[key];
+});
+document.getElementById("btn-en").onclick = ()=>{
+  document.getElementById("btn-en").classList.add("active");
+  document.getElementById("btn-tr").classList.remove("active");
+  apply(en);
+};
+document.getElementById("btn-tr").onclick = ()=>{
+  document.getElementById("btn-tr").classList.add("active");
+  document.getElementById("btn-en").classList.remove("active");
+  apply(tr);
+};
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    { "source": "/(.*)", "headers": [
+      { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+      { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+    ]}
+  ]
+}
+User-agent: *
+Allow: /
+Sitemap: https://sahsah.tech/sitemap.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://sahsah.tech/</loc></url>
+</urlset>
+
