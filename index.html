@@ -20,3 +20,235 @@
   </div>
 </body>
 </html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>SahSah Tech — 5G Hardware & Automation</title>
+  <meta name="description" content="SahSah Tech: 5G hardware & automation solutions. Driven by innovation.">
+  <meta property="og:title" content="SahSah Tech — Driven by Innovation">
+  <meta property="og:description" content="5G hardware & automation solutions from Istanbul.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/og_1200x630.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0a12;               /* derin morimsi siyah */
+      --card:#16141f;             /* kart zemini */
+      --muted:#a9a7b3;            /* ikincil metin */
+      --gold:#e0b341;             /* altın ton */
+      --gold-2:#f1c75a;
+      --accent:#6f5cff;           /* royal violet */
+      --ring:#ffffff22;
+      --radius:18px;
+      --shadow:0 10px 40px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
+      color:#eee;background:radial-gradient(1200px 800px at 70% -10%, #271d53 10%, transparent 60%), linear-gradient(#0b0a12,#0b0a12);
+    }
+    a{color:var(--gold)} a:hover{opacity:.9}
+    .wrap{max-width:1200px;margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:40px;height:40px}
+    .title{font-weight:800;letter-spacing:.2px}
+    .controls{display:flex;gap:10px}
+    .btn{
+      border:1px solid var(--ring);background:transparent;color:#eee;padding:10px 14px;border-radius:12px;
+      cursor:pointer;backdrop-filter:saturate(120%) blur(4px)
+    }
+    .btn.gold{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#1a1400;border:0;font-weight:700}
+    .hero{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;margin:34px 0 26px
+    }
+    .card{background:var(--card);border:1px solid var(--ring);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero .card{padding:32px}
+    .kicker{color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:12px}
+    h1{font-size:44px;line-height:1.08;margin:10px 0 14px}
+    .lead{color:var(--muted);font-size:18px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .glass{
+      border:1px solid var(--ring);background:linear-gradient( to bottom right, #1a1824cc, #151320cc);
+      border-radius:var(--radius);
+    }
+    .grid{display:grid;gap:18px}
+    .features{grid-template-columns:repeat(4,1fr);margin-top:22px}
+    .item{padding:18px}
+    .item h3{margin:10px 0 6px;font-size:18px}
+    .muted{color:var(--muted)}
+    .solutions{grid-template-columns:repeat(3,1fr);margin-top:22px}
+    .solutions .item{padding:22px}
+    .about,.contact{padding:30px;margin-top:22px}
+    .contact a.btn{display:inline-block;text-decoration:none}
+    .footer{color:#8a8796;text-align:center;padding:28px 0;font-size:14px}
+    /* responsive */
+    @media (max-width:1024px){
+      .hero{grid-template-columns:1fr}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .solutions{grid-template-columns:1fr}
+    }
+    @media (max-width:600px){
+      h1{font-size:34px}
+    }
+    /* tiny detail: animated accent ring behind logo */
+    .ring{
+      position:absolute;inset:-10px;border-radius:50%;
+      background:conic-gradient(from 75deg, transparent 0 60%, #6f5cff22 60% 100%);
+      filter:blur(6px);z-index:-1
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- NAV -->
+    <div class="nav">
+      <div class="brand">
+        <!-- Hexagon + sağa bakan iki at: sade SVG -->
+        <div style="position:relative">
+          <svg class="logo" viewBox="0 0 64 64" fill="none" aria-label="SahSah Tech logo">
+            <path d="M32 4 56 16v32L32 60 8 48V16L32 4Z" stroke="#e0b341" stroke-width="2.4" fill="transparent"/>
+            <!-- two right-facing abstract horses -->
+            <path d="M23 37c3-7 8-9 12-10l4 2-2 3h-3c1 2 0 6-5 6-3 0-5-1-6-1Z" fill="#e0b341"/>
+            <path d="M17 33c3-6 7-8 11-9l3 1-2 3h-3c1 2 0 5-4 5-3 0-4-1-5-0Z" fill="#e0b341"/>
+          </svg>
+          <span class="ring"></span>
+        </div>
+        <div class="title">SahSah Tech</div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="lang-tr">TR</button>
+        <button class="btn" id="lang-en">EN</button>
+        <a class="btn gold" href="mailto:contact@sahsahtech.com">Request a Demo</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card">
+        <div class="kicker" data-i18n="kicker">Driven by Innovation</div>
+        <h1 data-i18n="h1">5G Hardware & Automation for Industry</h1>
+        <p class="lead" data-i18n="lead">
+          We deliver robust 5G gateways, edge modules and turnkey automation to make your operations faster, safer and scalable.
+        </p>
+        <div class="cta">
+          <a class="btn gold" href="mailto:contact@sahsahtech.com">contact@sahsahtech.com</a>
+          <a class="btn" href="#contact" data-i18n="talk">Talk to an engineer</a>
+        </div>
+      </div>
+
+      <div class="card glass">
+        <img alt="5G boards mock" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1400&auto=format&fit=crop" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:var(--radius)"/>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="grid features">
+      <div class="item card">
+        <div class="kicker">5G</div>
+        <h3 data-i18n="f1">Ultra-reliable low-latency links</h3>
+        <p class="muted" data-i18n="f1d">Carrier-grade modules, private 5G core integrations.</p>
+      </div>
+      <div class="item card">
+        <div class="kicker">Edge</div>
+        <h3 data-i18n="f2">Rugged edge compute</h3>
+        <p class="muted" data-i18n="f2d">Fanless x86/ARM boxes with secure OTA & observability.</p>
+      </div>
+      <div class="item card">
+        <div class="kicker">Automation</div>
+        <h3 data-i18n="f3">PLC & robotics</h3>
+        <p class="muted" data-i18n="f3d">OPC UA, Modbus, ROS—real-time control & telemetry.</p>
+      </div>
+      <div class="item card">
+        <div class="kicker">Support</div>
+        <h3 data-i18n="f4">Design-to-field service</h3>
+        <p class="muted" data-i18n="f4d">Istanbul HQ with global logistics & on-site rollout.</p>
+      </div>
+    </section>
+
+    <!-- SOLUTIONS -->
+    <section class="grid solutions">
+      <div class="item card">
+        <h3 data-i18n="s1">Smart Factory Kits</h3>
+        <p class="muted" data-i18n="s1d">5G gateway + sensors + dashboards. Deployed in days.</p>
+      </div>
+      <div class="item card">
+        <h3 data-i18n="s2">Field Automation</h3>
+        <p class="muted" data-i18n="s2d">Pipelines, energy, mining—edge AI & telemetry at scale.</p>
+      </div>
+      <div class="item card">
+        <h3 data-i18n="s3">Custom Hardware</h3>
+        <p class="muted" data-i18n="s3d">Carrier approvals, enclosure design, EMC & certification.</p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about card">
+      <h3 data-i18n="about">About</h3>
+      <p class="muted" data-i18n="aboutd">
+        Founded in Istanbul, SahSah Tech builds reliable 5G hardware and automation systems for demanding environments. We combine robust engineering with elegant design to earn long-term trust.
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact card">
+      <h3 data-i18n="contact">Contact</h3>
+      <p class="muted">
+        <strong>E-mail:</strong> <a href="mailto:contact@sahsahtech.com">contact@sahsahtech.com</a> &nbsp;•&nbsp;
+        <strong>Web:</strong> <a href="https://sahsahtech.com">sahsahtech.com</a>
+      </p>
+      <a class="btn gold" href="mailto:contact@sahsahtech.com" data-i18n="cta">Request a Demo</a>
+    </section>
+
+    <div class="footer">© <span id="y"></span> SahSah Tech • Istanbul</div>
+  </div>
+
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // simple EN/TR toggler
+    const dict = {
+      tr: {
+        kicker:"İnovasyonla Güçlü",
+        h1:"Endüstri için 5G Donanım ve Otomasyon",
+        lead:"Operasyonlarınızı daha hızlı, güvenli ve ölçeklenebilir yapmak için 5G geçitler, edge modülleri ve anahtar teslim otomasyon sağlıyoruz.",
+        talk:"Mühendisle konuş",
+        f1:"Ultra güvenilir düşük gecikme",
+        f1d:"Operatör sınıfı modüller, özel 5G core entegrasyonları.",
+        f2:"Sağlam edge bilgisayar",
+        f2d:"Fansız x86/ARM kutular; güvenli OTA ve gözlemlenebilirlik.",
+        f3:"PLC ve robotik",
+        f3d:"OPC UA, Modbus, ROS — gerçek zamanlı kontrol & telemetri.",
+        f4:"Sahaya kadar hizmet",
+        f4d:"İstanbul merkez, küresel lojistik ve yerinde kurulum.",
+        s1:"Akıllı Fabrika Kitleri",
+        s1d:"5G geçit + sensörler + paneller. Günler içinde devrede.",
+        s2:"Saha Otomasyonu",
+        s2d:"Petrol/doğalgaz, enerji, madencilik—edge AI ve telemetri.",
+        s3:"Özel Donanım",
+        s3d:"Operatör onayları, muhafaza tasarımı, EMC & sertifikasyon.",
+        about:"Hakkımızda",
+        aboutd:"İstanbul’da kurulan SahSah Tech, zorlu sahalar için güvenilir 5G donanım ve otomasyon sistemleri geliştirir. Güçlü mühendisliği zarif tasarımla birleştirir, uzun vadeli güven kazanır.",
+        contact:"İletişim",
+        cta:"Demo İste"
+      }
+    };
+    const qs = s=>document.querySelectorAll(`[data-i18n="${s}"]`);
+    function setLang(l){
+      const tr = dict[l];
+      if(!tr) return;
+      for (const [k,v] of Object.entries(tr)){
+        document.querySelectorAll(`[data-i18n="${k}"]`).forEach(n=>n.textContent=v);
+      }
+      document.documentElement.lang = l;
+    }
+    document.getElementById('lang-tr').onclick=()=>setLang('tr');
+    document.getElementById('lang-en').onclick=()=>location.reload(); // EN varsayılan
+  </script>
+</body>
+</html>
