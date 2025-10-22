@@ -558,3 +558,107 @@
   </script>
 </body>
 </html>
+<!-- NAV'daki uygun yere ekle -->
+<a href="#automotive" class="nav">Automotive</a>
+<style>
+  /* Automotive Gallery */
+  .auto-wrap{max-width:1200px;margin-inline:auto;padding:64px 20px}
+  .auto-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:24px}
+  .auto-title{font-size:clamp(28px,4vw,42px);line-height:1.1;color:#e6c25b}
+  .auto-sub{opacity:.7;max-width:720px}
+  .auto-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .auto-card{grid-column:span 12;background:rgba(255,255,255,.04);
+    border:1px solid rgba(230,194,91,.25);border-radius:16px;overflow:hidden;
+    transition:transform .25s ease, box-shadow .25s ease}
+  .auto-card:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .auto-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+  .auto-meta{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:14px 16px}
+  .auto-meta h4{margin:0;font-size:18px}
+  .auto-chip{font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(230,194,91,.12);border:1px solid rgba(230,194,91,.35)}
+  .auto-cta{display:flex;gap:10px;flex-wrap:wrap}
+  .btn-min{font-size:14px;padding:10px 14px;border-radius:12px;border:1px solid rgba(230,194,91,.4);
+    background:linear-gradient(180deg,#2b2338,#1c1624);color:#e8d9ff}
+  .btn-min:hover{border-color:#e6c25b}
+
+  /* Lightbox */
+  .lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:9999}
+  .lb.open{display:flex}
+  .lb-img{max-width:min(92vw,1400px);max-height:88vh;border-radius:14px;border:1px solid rgba(230,194,91,.35)}
+  .lb-x{position:absolute;top:18px;right:22px;background:#000;border:1px solid rgba(230,194,91,.4);color:#e6c25b;border-radius:10px;padding:8px 12px;cursor:pointer}
+  @media (min-width:800px){ .auto-card{grid-column:span 6} }
+</style>
+<section id="automotive" class="auto-wrap">
+  <div class="auto-head">
+    <div>
+      <h2 class="auto-title">Automotive • Ultra-low-latency 5G</h2>
+      <p class="auto-sub">
+        Gerçek zamanlı telemetri, milisaniye gecikmesiz canlı video, pit’ten OTA güncellemeleri ve uzaktan kontrol için
+        saha onaylı 5G edge modüller. Seçkin üreticilerle veri güvenliği ve EMC standartları gözetilerek entegre edilir.
+      </p>
+    </div>
+    <div class="auto-cta">
+      <a class="btn-min" href="mailto:contact@sahsahtech.com?subject=Automotive%205G%20Pilot">Start a pilot</a>
+      <a class="btn-min" href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <div class="auto-grid">
+    <!-- Rolls & Range -->
+    <figure class="auto-card">
+      <img loading="lazy" src="images/rr-range.jpg" alt="Rolls-Royce Phantom & Range Rover • Fifth Avenue / Trump Tower vibe" class="auto-img" data-lb="images/rr-range.jpg">
+      <figcaption class="auto-meta">
+        <div>
+          <h4>Rolls-Royce Phantom & Range Rover</h4>
+          <small>NYC cityscape • ultra-low-latency convoy telemetry</small>
+        </div>
+        <span class="auto-chip">Convoy Telemetry</span>
+      </figcaption>
+    </figure>
+
+    <!-- Ferrari F8  (mor + altın kaliper) -->
+    <figure class="auto-card">
+      <img loading="lazy" src="images/ferrari-f8.jpg" alt="Ferrari F8 Tributo • purple with gold calipers • city sunset" class="auto-img" data-lb="images/ferrari-f8.jpg">
+      <figcaption class="auto-meta">
+        <div>
+          <h4>Ferrari F8 Tributo</h4>
+          <small>City sunset • 4K vision, AI-based traction dashboards</small>
+        </div>
+        <span class="auto-chip">4K Vision</span>
+      </figcaption>
+    </figure>
+
+    <!-- Ferrari 812 Superfast (pist) -->
+    <figure class="auto-card">
+      <img loading="lazy" src="images/ferrari-812.jpg" alt="Ferrari 812 Superfast • track day telemetry" class="auto-img" data-lb="images/ferrari-812.jpg">
+      <figcaption class="auto-meta">
+        <div>
+          <h4>Ferrari 812 Superfast</h4>
+          <small>Race track • sub-10ms CAN + GNSS streaming</small>
+        </div>
+        <span class="auto-chip">Live Telemetry</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+<script>
+  // Lightbox minimal
+  (function(){
+    const imgs = document.querySelectorAll('[data-lb]');
+    if(!imgs.length) return;
+    const lb = document.createElement('div');
+    lb.className='lb'; lb.innerHTML = `
+      <button class="lb-x" aria-label="Close">Close ✕</button>
+      <img class="lb-img" alt="">
+    `;
+    document.body.appendChild(lb);
+    const imgEl = lb.querySelector('.lb-img');
+    const close = ()=> lb.classList.remove('open');
+    lb.addEventListener('click', e => { if(e.target===lb || e.target.classList.contains('lb-x')) close(); });
+    document.addEventListener('keydown', e => { if(e.key==='Escape') close(); });
+    imgs.forEach(i => i.addEventListener('click', () => { imgEl.src = i.dataset.lb; lb.classList.add('open'); }));
+  })();
+</script>
+<img src="images/rr-range.jpg"
+     srcset="images/rr-range.jpg 2000w, images/rr-range@1400.jpg 1400w"
+     sizes="(max-width: 800px) 100vw, 50vw"
+     class="auto-img" loading="lazy" alt="...">
