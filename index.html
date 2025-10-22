@@ -251,4 +251,310 @@
     document.getElementById('lang-en').onclick=()=>location.reload(); // EN varsayılan
   </script>
 </body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SahSah Tech — Driven by Innovation</title>
+  <meta name="description" content="SahSah Tech – 5G hardware & automation. Royal, elegant and modern engineering." />
+  <link rel="icon" href="/favicon-512.png" />
+
+  <!-- Royal + Luxury typefaces -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-deep:#0b0a12;          /* derin mor-siyah */
+      --bg-royal:#151228;         /* royal mor-lacivert */
+      --card:#12111b88;           /* cam (glass) koyu */
+      --stroke:#2b2940;           /* çerçeve */
+      --text:#e8e6ff;             /* ana metin */
+      --muted:#a9a6c9;            /* yardımcı */
+      --gold-1:#d4b144;
+      --gold-2:#f5e4a6;
+      --gold-3:#b88a2a;
+      --accent:#2b3470;           /* saks mavisine yakın vurgu */
+      --shadow:0 30px 80px rgba(10,8,20,.55);
+      --radius:22px;
+      --pad:28px;
+    }
+
+    /* Reset + base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 80% -10%, #251f3f66 10%, transparent 60%),
+        radial-gradient(1000px 700px at -10% 0%, #1d254a55 0%, transparent 60%),
+        linear-gradient(160deg, var(--bg-royal), var(--bg-deep) 55%);
+      overflow-x:hidden;
+    }
+
+    /* Subtle moving particles for royal vibe */
+    .sparkles{
+      position:fixed; inset:-10vh -10vw;
+      background:
+        radial-gradient(2px 2px at 20% 30%, #ffffff22 30%, transparent 40%),
+        radial-gradient(2px 2px at 70% 60%, #ffffff1a 30%, transparent 40%),
+        radial-gradient(2px 2px at 40% 80%, #ffffff18 30%, transparent 40%),
+        radial-gradient(3px 3px at 90% 20%, #ffffff12 30%, transparent 45%);
+      filter:blur(.3px);
+      animation:float 30s linear infinite;
+      pointer-events:none;
+      z-index:0;
+    }
+    @keyframes float{to{transform:translateY(10vh)}}
+
+    /* Gold helpers */
+    .gold{
+      background:linear-gradient(135deg,var(--gold-2),var(--gold-1) 45%,var(--gold-3));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow:0 0 22px rgba(245,228,166,.08);
+    }
+    .gold-stroke{
+      position:relative;
+      border:1px solid transparent;
+      border-radius:var(--radius);
+      background:
+        linear-gradient(var(--card),var(--card)) padding-box,
+        linear-gradient(140deg, #fff0, var(--gold-3), var(--gold-2), var(--gold-1), #fff0 90%) border-box;
+      box-shadow:var(--shadow);
+    }
+    .btn{
+      display:inline-flex; gap:10px; align-items:center; justify-content:center;
+      padding:14px 22px;
+      border-radius:16px;
+      font-weight:600;
+      letter-spacing:.2px;
+      color:#0c0a12;
+      background:linear-gradient(135deg,var(--gold-2),var(--gold-1) 60%,var(--gold-3));
+      box-shadow:0 12px 30px rgba(212,177,68,.25), inset 0 1px 0 rgba(255,255,255,.45);
+      border:none; cursor:pointer;
+      transition:transform .15s ease, box-shadow .2s ease, filter .2s ease;
+      text-decoration:none;
+    }
+    .btn:hover{transform:translateY(-2px); filter:saturate(1.05); box-shadow:0 18px 40px rgba(212,177,68,.32)}
+    .btn.ghost{
+      background:transparent; color:var(--text);
+      border:1px solid #ffffff1a; box-shadow:none;
+      backdrop-filter:blur(6px);
+    }
+    .btn.ghost:hover{border-color:#ffffff33}
+
+    /* Layout */
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter:saturate(140%) blur(8px);
+      border-bottom:1px solid #ffffff10;
+      background:linear-gradient(to bottom, #0b0a12aa, #0b0a12a8 60%, transparent);
+    }
+    .wrap{max-width:1200px; margin:0 auto; padding:18px 22px; display:flex; align-items:center; gap:20px; justify-content:space-between}
+    nav a{color:var(--muted); text-decoration:none; margin:0 10px; font-weight:500}
+    nav a:hover{color:var(--text)}
+
+    .hero{
+      position:relative; z-index:1;
+      display:grid; place-items:center; padding:clamp(64px,8vw,110px) 22px 40px;
+    }
+    .hero-card{
+      width:min(980px,92vw);
+      padding:clamp(26px,4vw,46px);
+      border-radius:var(--radius);
+      text-align:center;
+    }
+    .brand{
+      display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:18px;
+    }
+    .brand .word{font-family:"Playfair Display",serif; font-weight:700; letter-spacing:.5px; font-size:clamp(28px,4.2vw,48px)}
+    .tag{color:var(--muted); font-size:clamp(14px,2vw,18px); margin-top:6px}
+
+    .cta{margin-top:26px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+    .grid{
+      width:min(1200px,94vw); margin:58px auto; display:grid; gap:18px;
+      grid-template-columns:repeat(12,1fr);
+      padding:0 22px;
+    }
+    .card{grid-column:span 4; padding:var(--pad)}
+    .card h3{margin:4px 0 10px; font-family:"Playfair Display",serif; letter-spacing:.2px}
+    .card p{margin:0; color:var(--muted)}
+    .card .pill{
+      display:inline-block; padding:6px 10px; border-radius:999px; font-size:12px;
+      border:1px solid #ffffff22; color:#dcd8ff; margin-bottom:12px; background:#0e0d18aa; backdrop-filter:blur(6px)
+    }
+    .card svg{opacity:.9}
+
+    /* Footer */
+    footer{border-top:1px solid #ffffff12; padding:30px 22px 60px; text-align:center; color:#bcb8e6}
+    footer a{color:var(--gold-2); text-decoration:none}
+    footer a:hover{text-decoration:underline}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .card{grid-column:span 6}
+    }
+    @media (max-width:640px){
+      nav{display:none}
+      .card{grid-column:span 12}
+    }
+  </style>
+</head>
+<body>
+  <div class="sparkles" aria-hidden="true"></div>
+
+  <!-- Topbar -->
+  <header>
+    <div class="wrap">
+      <div style="display:flex;align-items:center;gap:10px">
+        <!-- Compact logo -->
+        <svg width="28" height="28" viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f5e4a6"/><stop offset="0.6" stop-color="#d4b144"/><stop offset="1" stop-color="#b88a2a"/>
+            </linearGradient>
+          </defs>
+          <path d="M60 6 106 33 106 87 60 114 14 87 14 33Z" fill="none" stroke="url(#g)" stroke-width="6" />
+          <!-- Two rearing horses – simplified, original silhouette (not Ferrari) -->
+          <path d="M44 73c-3-9 3-14 8-18 2-4 2-9 0-13 5 1 9 4 10 9 4 0 8-3 12-6-1 5-3 9-6 12 4 2 7 5 8 9 1 4-1 8-4 11l-1 1c-2 2-6 1-8-1-2-1-4-1-6 0-3 2-7 3-10 0-1-1-2-2-3-4Z" fill="url(#g)"/>
+          <path d="M74 73c3-9-3-14-8-18-2-4-2-9 0-13-5 1-9 4-10 9-4 0-8-3-12-6 1 5 3 9 6 12-4 2-7 5-8 9-1 4 1 8 4 11l1 1c2 2 6 1 8-1 2-1 4-1 6 0 3 2 7 3 10 0 1-1 2-2 3-4Z" fill="url(#g)"/>
+        </svg>
+        <strong style="font-family:'Playfair Display',serif;letter-spacing:.4px">SahSah Tech</strong>
+      </div>
+      <nav>
+        <a href="#solutions">Solutions</a>
+        <a href="#why">Why Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-card gold-stroke">
+      <div class="brand">
+        <!-- Royal shield logo (bigger) -->
+        <svg width="84" height="84" viewBox="0 0 120 120" aria-label="SahSah Tech emblem">
+          <defs>
+            <linearGradient id="G" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f5e4a6"/><stop offset="0.6" stop-color="#d4b144"/><stop offset="1" stop-color="#b88a2a"/>
+            </linearGradient>
+          </defs>
+          <path d="M60 6 106 33 106 87 60 114 14 87 14 33Z" fill="none" stroke="url(#G)" stroke-width="6" />
+          <path d="M44 73c-3-9 3-14 8-18 2-4 2-9 0-13 5 1 9 4 10 9 4 0 8-3 12-6-1 5-3 9-6 12 4 2 7 5 8 9 1 4-1 8-4 11l-1 1c-2 2-6 1-8-1-2-1-4-1-6 0-3 2-7 3-10 0-1-1-2-2-3-4Z" fill="url(#G)"/>
+          <path d="M74 73c3-9-3-14-8-18-2-4-2-9 0-13-5 1-9 4-10 9-4 0-8-3-12-6 1 5 3 9 6 12-4 2-7 5-8 9-1 4 1 8 4 11l1 1c2 2 6 1 8-1 2-1 4-1 6 0 3 2 7 3 10 0 1-1 2-2 3-4Z" fill="url(#G)"/>
+        </svg>
+        <div class="word gold">SahSah Tech</div>
+      </div>
+
+      <div class="tag">Driven by Innovation — 5G hardware & automation.</div>
+
+      <div class="cta">
+        <a class="btn" href="#contact">Talk to Us</a>
+        <a class="btn ghost" href="mailto:contact@sahsahtech.com">contact@sahsahtech.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRID CARDS -->
+  <section id="solutions" class="grid">
+    <!-- 1 -->
+    <article class="card gold-stroke">
+      <span class="pill">5G Hardware</span>
+      <h3 class="gold">Carrier-grade components</h3>
+      <p>Trusted sourcing and qualification for radios, antennas and edge units — built for reliability and scale.</p>
+    </article>
+
+    <!-- 2 -->
+    <article class="card gold-stroke">
+      <span class="pill">Automation</span>
+      <h3 class="gold">Smart factory integration</h3>
+      <p>Industrial automation with PLC/SCADA bridges, predictive maintenance and streamlined IIoT deployments.</p>
+    </article>
+
+    <!-- 3 -->
+    <article class="card gold-stroke">
+      <span class="pill">Imports</span>
+      <h3 class="gold">Compliance & logistics</h3>
+      <p>End-to-end import operations for advanced technologies with documentation, testing and on-site validation.</p>
+    </article>
+
+    <!-- 4 (big) -->
+    <article class="card gold-stroke" style="grid-column:span 8; display:grid; grid-template-columns:1.2fr 1fr; gap:18px;">
+      <div>
+        <span class="pill">Flagship</span>
+        <h3 class="gold">Private 5G & Edge</h3>
+        <p>Turnkey private 5G deployments with edge compute nodes. Low-latency networking for automation, vision and real-time control.</p>
+        <div style="margin-top:14px">
+          <a class="btn" href="#contact">Request proposal</a>
+        </div>
+      </div>
+      <div class="gold-stroke" style="border-radius:16px; display:grid; place-items:center; background:linear-gradient(180deg,#161428cc,#0f0e17cc), radial-gradient(800px 300px at 50% -20%, #2b347022, transparent 60%);">
+        <!-- Decorative wave -->
+        <svg viewBox="0 0 600 220" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#f5e4a6"/><stop offset="1" stop-color="#d4b144"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 150 Q150 60 300 140 T600 140" fill="none" stroke="url(#lg)" stroke-width="3" opacity=".9"/>
+          <path d="M0 170 Q150 90 300 170 T600 170" fill="none" stroke="#f5e4a633" stroke-width="2"/>
+          <path d="M0 190 Q150 120 300 190 T600 190" fill="none" stroke="#d4b14422" stroke-width="2"/>
+        </svg>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="card gold-stroke" id="why">
+      <span class="pill">Assurance</span>
+      <h3 class="gold">Royal-grade QA</h3>
+      <p>Multi-step quality control and vendor vetting. We protect your capex — and your uptime.</p>
+    </article>
+
+    <!-- 6 -->
+    <article class="card gold-stroke">
+      <span class="pill">Support</span>
+      <h3 class="gold">White-glove service</h3>
+      <p>From BoM to customs to commissioning — executive-level reporting, on time and on budget.</p>
+    </article>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="grid" style="margin-top:12px">
+    <article class="card gold-stroke" style="grid-column:span 12; text-align:center;">
+      <h3 class="gold" style="margin-top:4px">Let’s build, in style.</h3>
+      <p class="tag" style="margin-bottom:14px">Istanbul • Global logistics • NDA-friendly</p>
+      <div class="cta">
+        <a class="btn" href="mailto:contact@sahsahtech.com">Email Us</a>
+        <a class="btn ghost" target="_blank" rel="noopener" href="https://sahsahtech.com">sahsahtech.com</a>
+      </div>
+    </article>
+  </section>
+
+  <footer>
+    © <span id="y"></span> SahSah Tech — Driven by Innovation • 5G Hardware & Automation • Istanbul  
+    <br/>
+    <a href="mailto:contact@sahsahtech.com">contact@sahsahtech.com</a>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1 && document.querySelector(id)){
+          e.preventDefault();
+          document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  </script>
+</body>
 </html>
