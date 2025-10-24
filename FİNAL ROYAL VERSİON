@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SahSah Tech — Driven by Innovation</title>
+  <meta name="description" content="SahSah Tech: 5G hardware, edge automation, and automotive telemetry. Istanbul-based, globally connected." />
+  <link rel="icon" href="/favicon-512.png" />
+  <meta property="og:title" content="SahSah Tech — 5G Hardware & Automation" />
+  <meta property="og:description" content="Driven by Innovation. Premium 5G & automation systems engineered in Istanbul." />
+  <meta property="og:image" content="https://sahsahtech.vercel.app/images/ferrari-f8.jpg" />
+  <meta name="theme-color" content="#0b0a12" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #e0b341;
+      --bg: #0b0a12;
+      --card: #15131f;
+      --muted: #a9a7b3;
+      --radius: 18px;
+      --shadow: 0 20px 40px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    body {
+      margin: 0; background: radial-gradient(1000px 800px at 70% -10%, #251c4f55, transparent 70%), #0b0a12;
+      font-family: Inter, system-ui, sans-serif; color: #eee;
+    }
+    a{color:var(--gold);text-decoration:none}
+    header {
+      display:flex;justify-content:space-between;align-items:center;
+      padding:18px 28px;border-bottom:1px solid rgba(255,255,255,.05);
+      backdrop-filter:blur(6px);
+    }
+    header h1 {
+      margin:0;font-family:"Playfair Display",serif;font-size:24px;color:var(--gold);
+      letter-spacing:.3px;
+    }
+    main {max-width:1200px;margin:0 auto;padding:40px 22px;}
+    .hero {text-align:center;padding:60px 20px;}
+    .hero h2 {font-size:clamp(34px,5vw,52px);margin-bottom:14px;}
+    .hero p {max-width:700px;margin:0 auto;color:var(--muted);}
+    .cta {margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn {
+      padding:12px 20px;border-radius:12px;border:none;font-weight:600;
+      background:linear-gradient(135deg,var(--gold),#f7d973);color:#0b0a12;
+      cursor:pointer;box-shadow:0 8px 25px rgba(224,179,65,.25);
+    }
+    .btn:hover{transform:translateY(-2px);transition:.2s;}
+    section.grid {
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;margin-top:40px;
+    }
+    .card {
+      background:var(--card);padding:22px;border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.07);box-shadow:var(--shadow);
+    }
+    .card h3 {margin:0 0 8px;font-family:"Playfair Display",serif;color:var(--gold);}
+    footer {
+      text-align:center;padding:30px 16px;color:#a7a4bb;font-size:14px;
+      border-top:1px solid rgba(255,255,255,.06);margin-top:50px;
+    }
+
+    /* Automotive gallery */
+    #automotive {margin-top:80px;}
+    .auto-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-top:24px;}
+    .auto-card {
+      border-radius:var(--radius);overflow:hidden;
+      background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+      transition:transform .3s ease;
+    }
+    .auto-card:hover {transform:translateY(-4px);}
+    .auto-img {width:100%;aspect-ratio:16/9;object-fit:cover;display:block;}
+    .auto-cap {padding:10px 12px;font-size:14px;color:#bbb;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>⚡ SahSah Tech</h1>
+    <nav>
+      <a href="#solutions">Solutions</a> • 
+      <a href="#automotive">Automotive</a> • 
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h2>Driven by Innovation — 5G Hardware & Automation</h2>
+      <p>High-performance 5G gateways, rugged edge computing and turnkey automation systems engineered for reliability, speed and style.</p>
+      <div class="cta">
+        <a class="btn" href="mailto:contact@sahsahtech.com">Contact Us</a>
+        <a class="btn" href="#automotive">Explore Automotive</a>
+      </div>
+    </div>
+
+    <section id="solutions" class="grid">
+      <div class="card">
+        <h3>5G Hardware</h3>
+        <p>Carrier-grade modules and antennas with global certification and ultra-low latency.</p>
+      </div>
+      <div class="card">
+        <h3>Automation</h3>
+        <p>Edge AI + PLC integration for real-time control, diagnostics, and efficiency.</p>
+      </div>
+      <div class="card">
+        <h3>Support</h3>
+        <p>From Istanbul HQ to global logistics — on-site rollout, service and quality assurance.</p>
+      </div>
+    </section>
+
+    <section id="automotive">
+      <h2 class="gold" style="font-family:'Playfair Display',serif;">Automotive Telemetry & 5G Integration</h2>
+      <p style="max-width:700px;color:var(--muted);">
+        Real-time data, over-the-air diagnostics and sub-10 ms latency for supercars and industrial fleets.  
+        Engineered with precision — built for the road ahead.
+      </p>
+      <div class="auto-grid">
+        <figure class="auto-card">
+          <img src="images/rr-range.jpg" alt="Rolls Royce & Range Rover" class="auto-img" />
+          <figcaption class="auto-cap">Rolls-Royce & Range Rover — Convoy Telemetry</figcaption>
+        </figure>
+        <figure class="auto-card">
+          <img src="images/ferrari-f8.jpg" alt="Ferrari F8 Tributo" class="auto-img" />
+          <figcaption class="auto-cap">Ferrari F8 Tributo — 4K Vision & Edge AI</figcaption>
+        </figure>
+        <figure class="auto-card">
+          <img src="images/ferrari-812.jpg" alt="Ferrari 812 Superfast" class="auto-img" />
+          <figcaption class="auto-cap">Ferrari 812 Superfast — Live Track Telemetry</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="contact" style="text-align:center;margin-top:70px;">
+      <h2>Let's build, in style.</h2>
+      <p>Istanbul • Global logistics • NDA-friendly</p>
+      <div class="cta">
+        <a class="btn" href="mailto:contact@sahsahtech.com">Email Us</a>
+        <a class="btn" href="https://sahsahtech.com">sahsahtech.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> SahSah Tech — Driven by Innovation • 5G Hardware & Automation • Istanbul  
+    <br><a href="mailto:contact@sahsahtech.com">contact@sahsahtech.com</a>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
